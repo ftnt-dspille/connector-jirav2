@@ -346,7 +346,7 @@ INFO = {
     'category': 'Ticket Management',
     'icon_small_name': 'jira_small.png',
     'icon_large_name': 'jira_large.png',
-    'help_online': 'https://github.com/ftnt-dspille/jirav2',
+    'help_online': 'https://github.com/ftnt-dspille/connector-jirav2',
     'configuration': {'fields': CONFIGURATION},
     'operations': OPERATIONS,
 }
