@@ -1,0 +1,27 @@
+# Real credentials. tests/.env.example is the template and IS tracked.
+.env
+.env.*
+!.env.example
+tests/.env
+tests/.env.*
+!tests/.env.example
+
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build output
+*.tgz
+dist/
+.DS_Store
+
+# Online-test tokens (one per scope set). The .example file is tracked.
+tests/scope_tokens.json
+
+# Browser profile used by scripts/make_scope_tokens.py
+tests/.playwright-profile/
+tests/.live-cache.json
