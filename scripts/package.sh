@@ -14,7 +14,7 @@ OUT="dist/${NAME}-${VERSION}.tgz"
 
 # Never shipped: tests, generators, docs and repo furniture. The appliance
 # neither needs nor runs any of it.
-EXCLUDE='^(\.github/|\.gitignore$|README\.md$|scripts/|tests/|dist/)'
+EXCLUDE='^(\.github/|\.gitignore$|README\.md$|scripts/|tests/|dist/|playbooks/.*\.yaml$)'
 
 FILES=()
 while IFS= read -r f; do FILES+=("$f"); done < <(git ls-files | grep -Ev "$EXCLUDE")

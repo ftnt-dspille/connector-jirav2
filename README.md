@@ -73,6 +73,22 @@ Server speak REST v2 and are not supported.
 * If a project has no Priority field, leave Priority empty. Jira rejects the field.
 * `Get Create Metadata` shows every field of an issue type and which are required.
 
+## Sample playbooks
+
+The connector ships a collection, `Sample - Jira v2 - 1.0.0`, that FortiSOAR imports with it. Each
+playbook takes plain parameters, so it runs from a button, from another playbook, or on its own.
+
+| Playbook | Parameters | What it does |
+|---|---|---|
+| Jira v2 - Create Ticket | project_key, issue_type, summary, description | Creates a ticket, reads it back, returns `issue_key`, `issue_status`, `issue_url` |
+| Jira v2 - Comment and Transition | issue_key, comment, status | Adds a comment, lists the transitions, moves the ticket by status name |
+| Jira v2 - Poll Updated Tickets | jql_query | Runs a JQL search with pagination handled, returns `ticket_count` and `ticket_keys` |
+| Jira v2 - Open Service Desk Request | service_desk_id, request_type_id, summary, description | Raises a JSM request, adds a public reply, reads it back |
+
+The YAML source is `playbooks/jirav2.yaml`; `scripts/build_playbooks.sh` compiles it to
+`playbooks/playbooks.json` with the fsrpb compiler (set `FSRPB_HOME`). To run them against a live
+FortiSOAR and check the output, use `tests/soar_playbooks_check.py` (the header lists what it needs).
+
 ## Troubleshooting
 
 | Message | Meaning |
